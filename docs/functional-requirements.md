@@ -42,12 +42,6 @@ This document defines the functional requirements for the ToDo application.
     - by creation date
     - by due date
 
-- **FR-011: Button color style**
-  - All application buttons must use a gray color style.
-
-- **FR-012: Background style**
-  - The app background must be light blue and include a soft cloud visual theme.
-
 ## Additional Obvious but Missing Features
 
 The following features are not part of the original list but are typically required for a usable ToDo app:
@@ -94,3 +88,4 @@ The following features are not part of the original list but are typically requi
 ## Notes
 - Sorting options must be consistently available where task overviews are displayed.
 - Status values used in this document are: `active` and `done`.
+- UI design and style rules are documented in `docs/ui-guidelines.md`.
