@@ -17,6 +17,7 @@ This document defines the UI guidelines for the ToDo application to ensure a con
 ## Layout
 - Provide a clear top-level navigation for task overviews.
 - Include separate views/tabs for:
+  - Create task
   - Active tasks
   - Done tasks
 - Keep the task overview readable and scannable.
@@ -24,6 +25,7 @@ This document defines the UI guidelines for the ToDo application to ensure a con
 ## Task Overview UI
 - Display key task information in the list:
   - Title
+  - Creation date (at least day)
   - Due date
   - Status
   - Priority (if enabled)
@@ -41,10 +43,12 @@ This document defines the UI guidelines for the ToDo application to ensure a con
 
 ## Sorting, Search, and Filter
 - Provide consistent sorting controls on overview pages.
-- Sorting options should include:
-  - Alphabetical by title
+- Sorting controls should be displayed as arrows on each sortable dimension.
+- Sorting dimensions should include:
+  - Title
   - Creation date
   - Due date
+- Clicking an arrow toggles sorting direction between ascending and descending.
 - If enabled, search/filter controls should be easy to discover and use.
 
 ## States and Feedback
