@@ -4,6 +4,8 @@
 
 This project is a full-stack JavaScript application designed as a starter template for the Copilot Bootcamp by Slalom. It consists of a React frontend and a Node.js/Express backend, organized in a monorepo structure using npm workspaces.
 
+The target product experience for the ToDo app is a **minimalist, warm, futuristic, and modern** interface with strong clarity and usability.
+
 ## Architecture
 
 The project follows a monorepo architecture with the following structure:
@@ -23,6 +25,13 @@ The project follows a monorepo architecture with the following structure:
 - Node.js
 - Express.js
 - Jest for testing
+
+## Product Experience Direction
+
+- UI must emphasize simplicity, readability, and focused task completion.
+- Visual language should be warm and modern, with minimal visual noise.
+- Interaction patterns should feel lightweight and polished (clear hierarchy, subtle feedback, consistent spacing).
+- Detailed UI and styling rules are documented in `docs/ui-guidelines.md`.
 
 ## Getting Started
 

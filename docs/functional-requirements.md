@@ -3,6 +3,8 @@
 ## Scope
 This document defines the functional requirements for the ToDo application.
 
+Visual design direction (minimalist, warm, futuristic, modern) is defined in `docs/ui-guidelines.md` and complements these functional requirements.
+
 ## Functional Requirements
 
 - **FR-001: Task data model**
@@ -102,3 +104,4 @@ The following features are not part of the original list but are typically requi
 - Sorting options must be consistently available where task overviews are displayed.
 - Status values used in this document are: `active` and `done`.
 - UI design and style rules are documented in `docs/ui-guidelines.md`.
+- Functional requirements should be implemented without contradicting the design consistency rules in `docs/ui-guidelines.md`.

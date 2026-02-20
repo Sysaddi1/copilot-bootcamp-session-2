@@ -4,11 +4,13 @@
 This document defines the UI guidelines for the ToDo application to ensure a consistent and user-friendly interface.
 
 ## Visual Style
-- Use a light blue background with a soft cloud theme.
-- Use gray styling for all buttons.
-- Use black text color as default for UI text.
-- Use `Arial` as the default font family.
-- Keep spacing, typography, and component sizes consistent across screens.
+- Design direction: **minimalist, warm, futuristic, and modern**.
+- Prefer clean surfaces, reduced visual noise, and generous whitespace.
+- Use a warm neutral base palette (for backgrounds and surfaces) with one modern accent color for interactive focus.
+- Keep contrast high enough for readability while avoiding harsh, pure-black-heavy layouts.
+- Use a modern sans-serif font stack (clean geometric appearance) and consistent typography scale.
+- Keep spacing, typography, and component sizing consistent across all screens.
+- Use subtle depth (light borders, soft elevation) instead of heavy shadows or decorative effects.
 
 ## Tables and Date Format
 - Table content must be left-aligned.
@@ -20,7 +22,7 @@ This document defines the UI guidelines for the ToDo application to ensure a con
   - Create task
   - Active tasks
   - Done tasks
-- Keep the task overview readable and scannable.
+- Keep the task overview readable and scannable with clear hierarchy and calm spacing.
 
 ## Task Overview UI
 - Display key task information in the list:
@@ -55,6 +57,7 @@ This document defines the UI guidelines for the ToDo application to ensure a con
 - Show empty-state messages for both Active and Done views.
 - Show success/error feedback for key actions (create, update, status change, delete).
 - Ensure loading and disabled states are visually clear.
+- Keep transitions subtle and fast; avoid distracting animations.
 
 ## Accessibility
 - Ensure keyboard navigability for all interactive elements.
@@ -68,8 +71,10 @@ This document defines the UI guidelines for the ToDo application to ensure a con
 
 ## Additional Recommended Style Guidelines
 - Use a consistent 8px spacing system for margins and paddings.
-- Use one consistent border radius across UI elements (for example inputs, cards, buttons).
+- Use one consistent, slightly rounded border radius across UI elements (for example inputs, cards, buttons).
 - Keep icon style and size consistent in all views.
 - Define one standard for button hierarchy (Primary, Secondary, Tertiary) and use it consistently.
 - Keep form labels above fields and align form actions in the same position on all forms.
 - Limit line length in text-heavy areas for readability (avoid very wide text blocks).
+- Keep component chrome minimal: avoid heavy outlines, gradients, and ornamental visuals.
+- Use clear focus states and subtle hover/pressed states for a polished, modern interaction feel.
