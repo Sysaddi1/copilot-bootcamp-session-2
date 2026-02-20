@@ -322,9 +322,11 @@ function App() {
               />
 
               <div className="form-actions">
-                <button type="submit">{editingTaskId ? 'Save task' : 'Create task'}</button>
+                <button type="submit" className="btn btn-primary">
+                  {editingTaskId ? 'Save task' : 'Create task'}
+                </button>
                 {editingTaskId && (
-                  <button type="button" onClick={resetForm}>
+                  <button type="button" className="btn btn-secondary" onClick={resetForm}>
                     Cancel
                   </button>
                 )}
@@ -342,7 +344,7 @@ function App() {
             {!loading && !error && (
               <div>
                 {tasks.length > 0 ? (
-                  <table>
+                  <table className="tasks-table">
                     <thead>
                       <tr>
                         <th>
@@ -373,10 +375,13 @@ function App() {
                           <td>{task.title}</td>
                           <td>{formatDateEu(task.created_at)}</td>
                           <td>{formatDateEu(task.due_date)}</td>
-                          <td>{task.status}</td>
+                          <td>
+                            <span className={`status-pill status-${task.status}`}>{task.status}</span>
+                          </td>
                           <td>
                             <button
                               type="button"
+                              className="btn btn-secondary"
                               onClick={(event) => {
                                 event.stopPropagation();
                                 handleStatusChange(task, task.status === 'active' ? 'done' : 'active');
@@ -390,7 +395,7 @@ function App() {
                                 event.stopPropagation();
                                 handleDelete(task.id);
                               }}
-                              className="delete-btn"
+                              className="btn btn-danger delete-btn"
                             >
                               Delete
                             </button>

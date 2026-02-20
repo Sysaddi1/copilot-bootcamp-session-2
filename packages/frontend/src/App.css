@@ -1,51 +1,93 @@
+:root {
+  --bg: #f8f3ed;
+  --surface: #fffdf9;
+  --surface-strong: #f3ece3;
+  --border: #e3d9cc;
+  --text: #2b2a29;
+  --muted: #6f6a64;
+  --accent: #8a5cf6;
+  --accent-hover: #7948eb;
+  --danger: #c74a4a;
+  --danger-hover: #b63d3d;
+  --ok: #1f7a43;
+  --radius: 10px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+}
+
 .App {
-  max-width: 1000px;
+  max-width: 1040px;
   margin: 0 auto;
-  padding: 24px;
-  color: #000;
+  padding: var(--space-3);
+  color: var(--text);
 }
 
 .App-header {
-  background-color: #dceeff;
-  padding: 20px;
-  color: #000;
-  border-radius: 8px;
-  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fffdf9 0%, #f5eee6 100%);
+  padding: var(--space-3);
+  color: var(--text);
+  border-radius: var(--radius);
+  margin-bottom: var(--space-3);
   text-align: left;
-  border: 1px solid #c6dff5;
+  border: 1px solid var(--border);
 }
 
 .App-header h1 {
   margin: 0;
   font-size: 1.8rem;
+  letter-spacing: 0.01em;
+}
+
+.App-header p {
+  margin: var(--space-1) 0 0;
+  color: var(--muted);
 }
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: var(--space-2);
 }
 
 section {
-  background-color: #eaf4ff;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #c6dff5;
+  background-color: var(--surface);
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
   text-align: left;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
 }
 
 .tabs {
   display: flex;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: var(--space-1);
+  margin-bottom: var(--space-1);
 }
 
 .tab-btn {
   min-width: 110px;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tab-btn:hover {
+  border-color: #cdbdaa;
+  background-color: #f9f3eb;
 }
 
 .tab-btn-active {
-  border: 2px solid #5f5f5f;
+  background-color: var(--surface-strong);
+  border-color: #cab39c;
 }
 
 .task-form-section form {
@@ -55,39 +97,78 @@ section {
   margin-top: 10px;
 }
 
+label {
+  font-weight: 600;
+  color: var(--text);
+}
+
 input,
 textarea,
 select {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: Arial, sans-serif;
-  color: #000;
-  background-color: #fff;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  color: var(--text);
+  background-color: var(--surface);
 }
 
-button {
-  padding: 8px 16px;
-  background-color: #bfbfbf;
-  color: #000;
-  border: 1px solid #8f8f8f;
-  border-radius: 4px;
+input:focus,
+textarea:focus,
+select:focus,
+button:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  outline-offset: 2px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
   cursor: pointer;
   font-weight: 600;
-  font-family: Arial, sans-serif;
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
 }
 
-button:hover {
-  background-color: #a8a8a8;
+.btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-secondary {
+  background-color: var(--surface);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background-color: #f9f2e8;
+  border-color: #ccb8a2;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  border-color: var(--danger);
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+  border-color: var(--danger-hover);
 }
 
 .form-actions {
   display: flex;
-  gap: 8px;
-  margin-top: 8px;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
 }
 
-table {
+.tasks-table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
@@ -96,26 +177,37 @@ table {
 th,
 td {
   padding: 10px;
-  border-bottom: 1px solid #d5d5d5;
+  border-bottom: 1px solid #eadfd1;
   vertical-align: top;
 }
 
 th {
   white-space: nowrap;
+  color: #4a4642;
 }
 
 thead th {
-  background-color: #dceeff;
+  background-color: #f6efe6;
 }
 
 .delete-btn {
-  margin-left: 8px;
+  margin-left: var(--space-1);
 }
 
 .sort-btn {
   margin-left: 6px;
   padding: 2px 8px;
   min-width: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+}
+
+.sort-btn:hover {
+  color: var(--text);
+  border-color: #ccb8a2;
 }
 
 tbody tr {
@@ -123,15 +215,38 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background-color: #f4f9ff;
+  background-color: #fdf7f0;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  border: 1px solid var(--border);
+  background-color: var(--surface-strong);
+}
+
+.status-active {
+  color: #6a3c00;
+  border-color: #e0c39f;
+  background-color: #fff3e4;
+}
+
+.status-done {
+  color: var(--ok);
+  border-color: #9bc7ab;
+  background-color: #eaf7ef;
 }
 
 .error {
-  color: #8b0000;
-  font-weight: bold;
+  color: #a32323;
+  font-weight: 600;
 }
 
 .success {
-  color: #0f4f17;
-  font-weight: bold;
+  color: var(--ok);
+  font-weight: 600;
 }

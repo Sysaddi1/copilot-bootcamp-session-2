@@ -315,8 +315,11 @@ describe('App Component', () => {
       expect(screen.getByText('Write tests')).toBeInTheDocument();
     });
 
+    const writeTestsRow = screen.getByText('Write tests').closest('tr');
+    const markDoneButton = within(writeTestsRow).getByRole('button', { name: 'Mark done' });
+
     await act(async () => {
-      await user.click(screen.getByRole('button', { name: 'Mark done' }));
+      await user.click(markDoneButton);
     });
 
     await waitFor(() => {
@@ -407,8 +410,11 @@ describe('App Component', () => {
       expect(rowsAfterAscSort[0]).toHaveTextContent('Alpha task');
     });
 
+    const refreshedTitleHeader = screen.getByText('Title').closest('th');
+    const refreshedTitleSortButton = within(refreshedTitleHeader).getByRole('button');
+
     await act(async () => {
-      await user.click(titleSortButton);
+      await user.click(refreshedTitleSortButton);
     });
 
     await waitFor(() => {
