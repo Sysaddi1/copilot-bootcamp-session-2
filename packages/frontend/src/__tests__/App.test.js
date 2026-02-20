@@ -187,6 +187,7 @@ beforeAll(() => server.listen());
 afterEach(() => {
   resetTaskStore();
   server.resetHandlers();
+  jest.restoreAllMocks();
 });
 afterAll(() => server.close());
 
@@ -337,6 +338,8 @@ describe('App Component', () => {
   });
 
   test('handles API load error', async () => {
+    const consoleErrorSpy = jest.spyOn(console, 'error').mockImplementation(() => {});
+
     server.use(
       rest.get('/api/tasks', (req, res, ctx) => {
         return res(ctx.status(500));
@@ -350,6 +353,8 @@ describe('App Component', () => {
     await waitFor(() => {
       expect(screen.getByText(/Failed to fetch data/)).toBeInTheDocument();
     });
+
+    expect(consoleErrorSpy).toHaveBeenCalled();
   });
 
   test('shows empty state when no active tasks exist', async () => {

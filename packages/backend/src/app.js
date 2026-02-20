@@ -9,7 +9,11 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(morgan('dev'));
+app.use(
+  morgan('dev', {
+    skip: () => process.env.NODE_ENV === 'test',
+  })
+);
 
 // Initialize in-memory SQLite database
 const db = new Database(':memory:');
@@ -87,7 +91,9 @@ initialTasks.forEach((task) => {
   insertTaskStmt.run(task.title, task.description, task.dueDate, task.notes, task.status);
 });
 
-console.log('In-memory database initialized with sample tasks');
+if (process.env.NODE_ENV !== 'test') {
+  console.log('In-memory database initialized with sample tasks');
+}
 
 const mapTaskFromBody = (body, { partial = false } = {}) => {
   const mappedTask = {};
